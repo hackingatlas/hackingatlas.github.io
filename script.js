@@ -67,21 +67,15 @@ function displayWriteup() {
 
 
 function plausibleVisitors() {
-    const siteID = "hackingatlas.github.io";
-    const plausibleApiUrl = `https://plausible.io/api/v1/stats/aggregate?site_id=${siteID}&period=30d`;
-    const apiKey = 'eSWpnMwjIEdnlFKdMD95EA7ouYYlyoeMofyHo13Z08f90mPcYlTix7JIKePYydPB';
-
-    fetch(plausibleApiUrl, {
-        headers: {
-            'Authorization': `Bearer ${apiKey}`
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        const visitorsLastMonth = data.results.visitors.value;
-        document.getElementById('monthly-visitors').textContent = visitorsLastMonth;
-    })
-    .catch(error => console.error('Error fetching Plausible data:', error));
+    fetch('/api/get-visitors')
+        .then(response => response.json())
+        .then(data => {
+            const visitorsLastMonth = data.results.visitors.value;
+            document.getElementById('monthly-visitors').textContent = visitorsLastMonth;
+        })
+        .catch(error => {
+            console.error('Error fetching visitors data:', error);
+        });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
