@@ -11,11 +11,12 @@ export default async function handler(req, res) {
         });
 
         const data = await response.json();
+        console.log(data);
         const visitorsLastMonth = data.results.visitors.value;
 
         res.status(200).json({ visitors: visitorsLastMonth });
     } catch (error) {
-        console.error('API error:', error);
+        console.error('API error:', error.message, error.stack);
         res.status(500).json({ error: 'Failed to fetch Plausible data' });
     }
 }

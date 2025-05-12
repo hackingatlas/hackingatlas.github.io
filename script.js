@@ -70,6 +70,7 @@ function plausibleVisitors() {
     fetch('/api/get-visitors')
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             const visitorsLastMonth = data.results.visitors.value;
             document.getElementById('monthly-visitors').textContent = visitorsLastMonth;
         })
