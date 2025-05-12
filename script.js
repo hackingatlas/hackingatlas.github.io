@@ -67,11 +67,11 @@ function displayWriteup() {
 
 
 function plausibleVisitors() {
-    fetch('/api/get-visitors')
+    fetch('https://plausible-api.samucrow.workers.dev/')
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            const visitorsLastMonth = data.results.visitors.value;
+            const visitorsLastMonth = data.visitors;
             document.getElementById('monthly-visitors').textContent = visitorsLastMonth;
         })
         .catch(error => {
