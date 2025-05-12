@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
     const siteID = "hackingatlas.github.io";
-    const plausibleApiUrl = `GET https://plausible.io/api/v1/stats/aggregate?site_id=${siteID}&period=30d&metrics=visitors`;
+    const plausibleApiUrl = `GET https://plausible.io/api/v1/stats/aggregate?site_id=${siteID}&period=30d`;
     const apiKey = process.env.PLAUSIBLE_API_KEY;
 
     try {
