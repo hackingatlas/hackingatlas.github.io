@@ -1,0 +1,30 @@
+[
+    {
+      "name": "Blue",
+      "platform": "HackTheBox",
+      "difficulty": "Easy",
+      "os": "Windows",
+      "description": "Un clásico de escalada de privilegios usando EternalBlue.",
+      "tags": ["SMB", "EternalBlue", "Windows", "exploit"],
+      "published": "2025-05-10T14:30:00Z"
+      
+    },
+    {
+      "name": "RootMe",
+      "platform": "TryHackMe",
+      "difficulty": "Easy",
+      "os": "Linux",
+      "description": "Exploración básica de vulnerabilidades web y escalada local.",
+      "tags": ["web", "local escalation", "Linux"],
+      "published": "2025-05-09T10:00:00Z"
+    },
+    {
+      "name": "Codewars",
+      "platform": "THM",
+      "difficulty": "Medium",
+      "os": "Linux",
+      "description": "CTF about bypassing authentication and exploiting a web-based code execution environment.",
+      "tags": ["PrivEsc", "PathHijacking", "RCE", "SQLi"],
+      "published": "2025-05-10T14:30:00Z"
+    }
+]

@@ -1,0 +1,523 @@
+
+/*Estilos para elementos iguales*/
+
+body {
+    font-family: system-ui, Roboto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-flow: column;
+    background-color: #0f1729;
+    text-align: left;
+    height: 20px;
+}
+
+a {
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+h1 {
+    font-size: 48px;
+    display: block;
+    font-weight: 700;
+    white-space: nowrap;
+    background-clip: text;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    cursor: default;
+    pointer-events: auto;
+    color: #fafafa;
+}
+
+h2 {
+    margin: 0px 0px;
+}
+
+p {
+    margin: 0px 0px;
+}
+
+.text {
+    color: #97a3b4;
+}
+
+.button {
+    padding: 15px 20px;
+    font-weight: 600;
+    user-select: none;
+    border-radius: 7px;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+}
+
+.footer {
+
+}
+
+
+/*Estilos Individuales*/
+.navbar {
+    position: sticky;
+    top: 0px;
+    z-index: 50;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(15, 23, 41, 0.9);
+
+
+}
+
+.principal-section {
+    display: flex;
+    overflow: hidden;
+    max-width: none;
+    margin: 0px;
+}
+
+.principal-container {
+   display: flex;
+   padding: 0px 30px;
+   justify-content: center;
+   align-items: center;
+   text-align: left;
+}
+
+.text-container {
+    width: 100%;
+    max-width: none;
+    margin-right: 0px;
+    margin-left: auto;
+    padding-right: 50px;
+}
+
+.text-div {
+    width: auto;
+    font-size: 20px;
+}
+
+.principal-text {
+    display: inline-block;
+    color: transparent;
+    font-weight: 600;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fafafa 50.1%);
+    background-size: 250% 100%;
+    background-position: 100% 100%;
+    background-clip: text;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 1px #fafafa;
+    transition: background-position 700ms ease;
+}
+
+@media (hover:hover) and (pointer: fine) {
+    .principal-text:hover {
+        background-position: 0% 100%;
+    }
+}
+
+.database {
+    display: block;
+    color: transparent;
+    background-image: linear-gradient(150deg, #00bbff, #00ff9d 46%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.web-description {
+    font-size: 20px;
+    max-width: 770px;
+    margin-top: 24px;
+    padding: 0px 20px;
+}
+
+.buttons-div {
+    display: flex;
+    margin-top: 30px;
+    gap: 27px;
+}
+
+.writeups-button {
+    justify-content: center;
+    font-size: 17px;
+    line-height: 25px;
+    font-weight: 500;
+    color: #202020;
+    background-image: linear-gradient(270deg, #0bf, #00ff9d);
+    transition: opacity 150ms cubic-bezier(.4,0,.2,1);
+}
+
+@media (hover:hover) and (pointer: fine) {
+    .writeups-button:hover {
+        opacity: 0.9;
+    }
+}
+
+.conocimiento-button {
+    padding: 0px;
+    line-height: 25px;
+    background-color: #0bf;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #0bf;
+}
+
+.conocimiento-button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    background-color: #0f1729;
+    border-radius: 7px;
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 15px 20px;
+}
+
+@media (hover:hover) and (pointer: fine) {
+    .conocimiento-button-div:hover {
+        opacity: 0.9;
+    }
+}
+
+.conocimiento-button-icon {
+    width: 17px;
+    height: auto;
+    color: #fafafa;
+}
+
+.conocimiento-button-text {
+    font-size: 17px;
+    color: #fafafa;
+    font-weight: 500;
+}
+
+.last-machine-container {
+    width: 100%;
+    display: block;
+    max-width: none;
+    background-image: linear-gradient(180deg, #0bf 35%, #00ff9d 62%);
+    border-radius: 15px;
+    margin-left: 0px;
+    padding: 4px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 5px 7px;
+    transition: transform 300ms ease-in-out;
+}
+
+@media (hover:hover) and (pointer: fine) {
+    .last-machine-container:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.border-container {
+    display: block;
+    max-width: none;
+    padding: 25px;
+    background-color: #111927;
+    border-radius: 15px;
+}
+
+.last-machine-first-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.published {
+    font-size: 14px;
+}
+
+.difficulty-os {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    gap: 30px;
+}
+
+.difficulty {
+    font-size: 10px;
+    color: #fafafa;
+    font-weight: 400;
+}
+
+.os {
+    font-size: 12px;
+    background-color: #434856;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.machine-name {
+    margin-top: 15px;
+    color: #fafafa;
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.machine-description {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.tags-div {
+    display: flex;
+    margin-top: 10px;
+    align-content: flex-start;
+}
+
+.tag {
+    overflow: hidden;
+    line-height: 16px;
+    margin-right: 8px;
+    padding: 4px 8px;
+    max-width: 80px;
+    font-size: 13px;
+    color: #0bf;
+    flex-flow: column-reverse;
+    border-radius: 20px;
+    background-color: #434856;
+    white-space: nowrap;
+    cursor: default;
+    text-overflow: ellipsis;
+    transition: all 200ms ease;
+}
+
+@media (hover:hover) and (pointer: fine) {
+    .tag:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px #00b0ff33;
+    }
+}
+
+.user-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-top: 15px;
+}
+
+.samucrow-logo {
+    display: block;
+    width: 40px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.user-description {
+    display: block;
+    margin-left: 10px;
+}
+
+.username {
+    margin: 0px;
+    color: #fafafa;
+    height: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.user-definition {
+    margin: 0px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.form-section {
+    background-image: url(/images/fondo_fixed.webp);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/*Media Queries 1000px*/
+
+@media (max-width: 1000px) {
+    .principal-container {
+        display: block;
+        padding: 0px 10px;
+    }
+
+    .text-container {
+        padding: 0px;
+    }
+
+    .text-div {
+        text-align: center;
+        user-select: none;
+    }
+
+    h1 {
+        font-size: 80px;
+        white-space: normal;
+    }
+
+    .database {
+        background-image: linear-gradient(150deg, #0bf, #00ff9d);
+    }
+
+    .web-description {
+        max-width: 580px;
+        font-size: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px;
+    }
+
+    .buttons-div {
+        margin-top: 40px;
+        justify-content: space-around;
+    }
+
+    .writeups-button {
+        padding: 25px 40px;
+    }
+
+    .conocimiento-button-div {
+        padding: 25px 40px;
+    }
+
+    .last-machine-container {
+        margin-top: 80px;
+        max-width: 580px;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 600px ) {
+    h1 {
+        font-size: 12vw;
+    }
+
+    .principal-text {
+        -webkit-text-stroke: 0px;
+        font-weight: 700;
+    }
+
+    .web-description{
+        font-size: 5vw;
+    }
+
+    .buttons-div {
+        display: block;
+        gap: 0px;
+        width: 100%;
+        max-width: 65vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .conocimiento-button {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .conocimiento-button-div{
+        padding: 25px 6.75vw;
+    }
+    .writeups-button {
+        display: block;
+        padding: 25px 6.75vw;
+    }
+    .last-machine-container {
+        max-width: 89vw;
+    }
+}
+
+@media (max-width: 405px) {
+    .writeups-button {
+        font-size: 4.2vw;
+        line-height: 6.2vw;
+        padding: 8vw 6.75vw;
+    }
+    
+    .conocimiento-button-div {
+        padding: 8vw 6.75vw;
+    }
+
+    .conocimiento-button-icon {
+        width: 4.2vw;
+    }
+
+    .conocimiento-button-text {
+        font-size: 4.2vw;
+        line-height: 6.2vw;
+    }
+
+    .last-machine-container {
+        padding: 0.5vw;
+    }
+
+    .border-container {
+        padding: 5vw;
+    }
+    .last-machine-first-info {
+        display: block;
+        text-align: center;
+        font-size: 3.5vw;
+    }
+
+    .published {
+        font-size: 3.46vw;
+    }
+
+    .difficulty-os {
+        display: flex;
+        margin-top: 10px;
+        justify-content: space-between;
+        margin-top: 2.5vw;
+    }
+
+    .difficulty {
+        font-size: 2.5vw;
+    }
+
+    .os {
+        font-size: 3vw;
+        padding: 1vw 2vw;
+    }
+
+    .machine-name {
+        font-size: 6.17vw;
+        margin-top: 3.7vw;
+    }
+
+    .machine-description {
+        text-align: center;
+        font-size: 3.95vw;
+        margin-top: 3vw;
+    }
+
+    .tag {
+        font-size: 3vw;
+        padding: 1vw 2vw;
+        margin-right: 2vw;
+    }
+
+    .user-div {
+        margin-top: 3.70vw;
+    }
+
+    .samucrow-logo {
+        width: 9.88vw;
+        height: 9.88vw;
+        border-radius: 3.7;
+    }
+
+    .username {
+        font-size: 4vw;
+        line-height: 5vw;
+    }
+
+    .user-definition {
+        font-size: 3.5vw;
+    }
+}
