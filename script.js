@@ -58,11 +58,33 @@ function displayWriteup() {
                 }
             });
 
-            document.getElementById('Machine Writeups').textContent = totalMachines;
-            document.getElementById('Windows Machines').textContent = windowsMachines;
-            document.getElementById('Linux Machines').textContent = linuxMachines;
+            document.getElementById('machine-writeups').textContent = totalMachines;
+            document.getElementById('windows-machines').textContent = windowsMachines;
+            document.getElementById('linux-machines').textContent = linuxMachines;
         })
         .catch(error => console.error('Error loading writeups:', error));
 }
 
-document.addEventListener('DOMContentLoaded', displayWriteup);
+
+function plausibleVisitors() {
+    const siteID = "hackingatlas.github.io";
+    const plausibleApiUrl = `https://plausible.io/api/v1/stats/aggregate?site_id=${siteID}&period=30d`;
+    const apiKey = 'eSWpnMwjIEdnlFKdMD95EA7ouYYlyoeMofyHo13Z08f90mPcYlTix7JIKePYydPB';
+
+    fetch(plausibleApiUrl, {
+        headers: {
+            'Authorization': `Bearer ${apiKey}`
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const visitorsLastMonth = data.results.visitors.value;
+        document.getElementById('monthly-visitors').textContent = visitorsLastMonth;
+    })
+    .catch(error => console.error('Error fetching Plausible data:', error));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    displayWriteup();
+    plausibleVisitors();
+});
