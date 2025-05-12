@@ -1,7 +1,7 @@
 {
   "functions": {
-    "api/get-visitors.js": {
-      "runtime": "nodejs18.x"
+    "/api/get-visitors.js": {
+      "runtime": "nodejs16.x"
     }
   }
 }
