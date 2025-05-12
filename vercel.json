@@ -1,6 +1,6 @@
 {
   "functions": {
-    "/api/get-visitors.js": {
+    "api/get-visitors.js": {
       "runtime": "nodejs16.x"
     }
   }
