@@ -1,3 +1,4 @@
+
 function timeAgo(publishedDate) {
     const now = new Date();
     const published = new Date(publishedDate);
@@ -24,14 +25,14 @@ function displayWriteup() {
                 <div class="last-machine-first-info">
                     <span class="published text">Published ${timeAgo(writeup.published)}</span>
                     <div class="difficulty-os">
-                        <span class="difficulty">${writeup.difficulty}</span>
-                        <span class="os text">${writeup.os}</span>
+                        <span class="difficulty ${writeup.difficulty.toLowerCase()}">${writeup.difficulty}</span>
+                        <span class="os ${writeup.os.toLowerCase()}">${writeup.os}</span>
                     </div>
                 </div>
-                <h2 class="machine-name">${writeup.name}</h2>
+                <h2 class="machine-name">${writeup.name} - <span class="platform">${writeup.platform}</span> Machine</h2>
                 <p class="machine-description text">${writeup.description}</p>
                 <div class="tags-div">
-                    ${writeup.tags.map(tag => `<span class="tag">#${tag}</span>`).join('\n')}
+                    ${writeup.tags.map(tag => `<span class="tag">#${tag.charAt(0).toUpperCase() + tag.slice(1)}</span>`).join('\n')}
                 </div>
                 <div class="user-div">
                     <img class="samucrow-logo" src="/images/samucrow_logo.avif" alt="SamuCrow">
@@ -41,6 +42,25 @@ function displayWriteup() {
                     </div>
                 </div>
             `;
+
+            // Machines Statistics
+            let totalMachines = 0;
+            let windowsMachines = 0;
+            let linuxMachines = 0;
+
+            data.forEach(writeup => {
+                totalMachines++;
+
+                if (writeup.os.toLowerCase() === 'windows') {
+                    windowsMachines++;
+                } else if (writeup.os.toLowerCase() === 'linux') {
+                    linuxMachines++;
+                }
+            });
+
+            document.getElementById('Machine Writeups').textContent = totalMachines;
+            document.getElementById('Windows Machines').textContent = windowsMachines;
+            document.getElementById('Linux Machines').textContent = linuxMachines;
         })
         .catch(error => console.error('Error loading writeups:', error));
 }

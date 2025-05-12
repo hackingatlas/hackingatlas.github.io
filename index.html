@@ -20,14 +20,10 @@
             ]
         }
     </script>
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEFKPV51NE"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-DEFKPV51NE');
-    </script>
+        <!-- Plausible Analytics (Open Source, sin cookies) -->
+    <script defer data-domain="samucrow.github.io" src="https://plausible.io/js/script.tagged-events.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
     <meta charset="UTF-8">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -84,7 +80,26 @@
                 </div>
             </div>
         </section>
-
+        <div class="statistics-container container">
+            <div class="statistics-grid" id="statistics">
+                <div class="statistic">
+                    <span class="statistic-number" id="Machine Writeups"></span>
+                    <span class="statistic-text text">Machine Writeups</span>
+                </div>
+                <div class="statistic">
+                    <span class="statistic-number" id="Windows Machines"></span>
+                    <span class="statistic-text text">Windows Machines</span>
+                </div>
+                <div class="statistic">
+                    <span class="statistic-number" id="Linux Machines"></span>
+                    <span class="statistic-text text">Linux Machines</span>
+                </div>
+                <div class="statistic">
+                    <span class="statistic-number" id="Monthly Visitors"></span>
+                    <span class="statistic-text text">Monthly Visitors</span>
+                </div>
+            </div>
+        </section>
         <section class="form-section">
         <!-- Aquí va algún otro contenido, por ejemplo, servicios, noticias, etc. -->
         </section>

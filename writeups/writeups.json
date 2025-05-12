@@ -1,7 +1,7 @@
 [
     {
       "name": "Blue",
-      "platform": "HackTheBox",
+      "platform": "HTB",
       "difficulty": "Easy",
       "os": "Windows",
       "description": "Un clásico de escalada de privilegios usando EternalBlue.",
@@ -11,7 +11,7 @@
     },
     {
       "name": "RootMe",
-      "platform": "TryHackMe",
+      "platform": "THM",
       "difficulty": "Easy",
       "os": "Linux",
       "description": "Exploración básica de vulnerabilidades web y escalada local.",
