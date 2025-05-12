@@ -5,5 +5,11 @@
       "src": "api/get-visitors.js",
       "use": "@vercel/node"
     }
+  ],
+  "routes": [
+    {
+      "src": "/api/get-visitors",
+      "dest": "/api/get-visitors.js"
+    }
   ]
 }
