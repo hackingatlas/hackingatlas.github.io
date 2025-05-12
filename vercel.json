@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/get-visitors.js": {
+      "runtime": "edge"
+    }
+  }
+}
