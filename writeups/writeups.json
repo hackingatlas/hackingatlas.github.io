@@ -6,8 +6,8 @@
       "os": "Windows",
       "description": "Un clásico de escalada de privilegios usando EternalBlue.",
       "tags": ["SMB", "EternalBlue", "Windows", "exploit"],
+      "link": "https://samucrow.github.io",
       "published": "2025-05-10T14:30:00Z"
-      
     },
     {
       "name": "RootMe",
@@ -16,6 +16,7 @@
       "os": "Linux",
       "description": "Exploración básica de vulnerabilidades web y escalada local.",
       "tags": ["web", "local escalation", "Linux"],
+      "link": "https://samucrow.github.io",
       "published": "2025-05-09T10:00:00Z"
     },
     {
@@ -25,6 +26,7 @@
       "os": "Linux",
       "description": "CTF about bypassing authentication and exploiting a web-based code execution environment.",
       "tags": ["PrivEsc", "PathHijacking", "RCE", "SQLi"],
+      "link": "https://samucrow.github.io",
       "published": "2025-05-10T14:30:00Z"
     }
 ]

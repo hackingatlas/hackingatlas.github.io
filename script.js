@@ -29,17 +29,20 @@ function displayWriteup() {
                         <span class="os ${writeup.os.toLowerCase()}">${writeup.os}</span>
                     </div>
                 </div>
-                <h2 class="machine-name">${writeup.name} - <span class="platform">${writeup.platform}</span> Machine</h2>
+                <h2 class="machine-name">${writeup.name} - <span class="platform ${writeup.platform.toLowerCase()}">${writeup.platform}</span> Machine</h2>
                 <p class="machine-description text">${writeup.description}</p>
                 <div class="tags-div">
                     ${writeup.tags.map(tag => `<span class="tag">#${tag.charAt(0).toUpperCase() + tag.slice(1)}</span>`).join('\n')}
                 </div>
-                <div class="user-div">
-                    <img class="samucrow-logo" src="/images/samucrow_logo.avif" alt="SamuCrow">
-                    <div class="user-description">
-                        <h3 class="username">SamuCrow</h3>
-                        <span class="user-definition text">Pentester</span>
+                <div class="last-machine-bottom">
+                    <div class="user-div">
+                        <img class="samucrow-logo" src="/images/samucrow_logo.avif" alt="SamuCrow">
+                        <div class="user-description">
+                            <h3 class="username">SamuCrow</h3>
+                            <span class="user-definition text">Pentester</span>
+                        </div>
                     </div>
+                    <a href="https://samucrow.github.io/writeups" class="machine-link">Read Writeup <i class="material-icons" id="writeup-arrow">arrow_forward</i></a>
                 </div>
             `;
 
@@ -67,6 +70,7 @@ function displayWriteup() {
 
 
 function plausibleVisitors() {
+    //Cloudfare API Key
     fetch('https://plausible-api.samucrow.workers.dev/')
         .then(response => response.json())
         .then(data => {
