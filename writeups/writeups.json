@@ -1,15 +1,5 @@
 [
     {
-      "name": "Blue",
-      "platform": "HTB",
-      "difficulty": "Easy",
-      "os": "Windows",
-      "description": "Un clásico de escalada de privilegios usando EternalBlue.",
-      "tags": ["SMB", "EternalBlue", "Windows", "exploit"],
-      "link": "https://samucrow.github.io",
-      "published": "2025-05-10T14:30:00Z"
-    },
-    {
       "name": "RootMe",
       "platform": "THM",
       "difficulty": "Easy",
@@ -26,6 +16,16 @@
       "os": "Linux",
       "description": "CTF about bypassing authentication and exploiting a web-based code execution environment.",
       "tags": ["PrivEsc", "PathHijacking", "RCE", "SQLi"],
+      "link": "https://samucrow.github.io",
+      "published": "2025-05-10T14:30:00Z"
+    },
+    {
+      "name": "Blue",
+      "platform": "HTB",
+      "difficulty": "Easy",
+      "os": "Windows",
+      "description": "Un clásico de escalada de privilegios usando EternalBlue.",
+      "tags": ["SMB", "EternalBlue", "Windows", "exploit"],
       "link": "https://samucrow.github.io",
       "published": "2025-05-10T14:30:00Z"
     }
