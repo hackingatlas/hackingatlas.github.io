@@ -64,6 +64,8 @@ function displayWriteup() {
             document.getElementById('machine-writeups').textContent = totalMachines;
             document.getElementById('windows-machines').textContent = windowsMachines;
             document.getElementById('linux-machines').textContent = linuxMachines;
+
+            enableMobileHover();
         })
         .catch(error => console.error('Error loading writeups:', error));
 }
@@ -81,6 +83,41 @@ function plausibleVisitors() {
         .catch(error => {
             console.error('Error fetching visitors data:', error);
         });
+}
+
+let debounceTimeout;
+
+function enableMobileHover() {
+    if (window.matchMedia('(pointer: fine)').matches) return;
+
+    const target = document.querySelector('.last-machine-container');
+    if (!target) return;
+
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            clearTimeout(debounceTimeout); // Limpiar cualquier timeout previo
+
+            debounceTimeout = setTimeout(() => {
+                const fullyVisible = entry.intersectionRatio >= 0.8;
+
+                const tags = target.querySelectorAll('.tag');
+
+                if (fullyVisible) {
+                    target.classList.add('mobile-hover');
+                    tags.forEach(tag => tag.classList.add('mobile-hover-tag'));
+                } else {
+                    target.classList.remove('mobile-hover');
+                    tags.forEach(tag => tag.classList.remove('mobile-hover-tag'));
+                }
+            }, 350); // Ejecutar después de 0.5 segundos de inactividad
+        },
+        {
+            root: null,
+            threshold: [0.8]
+        }
+    );
+
+    observer.observe(target);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
