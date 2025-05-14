@@ -1,5 +1,15 @@
 [
     {
+      "name": "Hospital",
+      "platform": "HTB",
+      "difficulty": "Medium",
+      "os": "Windows",
+      "description": "Exploración básica de vulnerabilidades web y escalada local.",
+      "tags": ["Active Directory", "SMB Enumeration", "PHP LFI & RCE", "Caido Automation", "Information Leakage", "Vulnerable Kernel", "GhostScript malicious .eps", "XAMPP Escalation"],
+      "link": "https://samucrow.github.io/writeups/hospital",
+      "published": "2025-05-14T14:49:42Z"
+    }, 
+    {
       "name": "RootMe",
       "platform": "THM",
       "difficulty": "Easy",

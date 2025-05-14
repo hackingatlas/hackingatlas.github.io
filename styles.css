@@ -449,6 +449,9 @@ p {
     display: flex;
     margin-top: 25px;
     align-content: flex-start;
+    max-width: 500px;
+    flex-flow: wrap;
+    gap: 10px 0px;
 }
 
 .tag {
@@ -456,7 +459,7 @@ p {
     line-height: 16px;
     margin-right: 8px;
     padding: 4px 8px;
-    max-width: 80px;
+    max-width: 150px;
     font-size: 15px;
     color: #0bf;
     flex-flow: column-reverse;
