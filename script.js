@@ -123,4 +123,33 @@ function enableMobileHover() {
 document.addEventListener('DOMContentLoaded', () => {
     displayWriteup();
     plausibleVisitors();
+
+    const menuToggle = document.getElementById('toggle-button');
+    const navMenu = document.querySelector('.nav-menu');
+    const navRightLinks = document.querySelector('.nav-right-links');
+
+    // Lottie animation setup
+    const lottieIcon = lottie.loadAnimation({
+        container: document.getElementById('lottie-icon'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: '/assets/lottieflow-menu-nav-08-fafafa-easey.json'
+    });
+
+    let isMenuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navRightLinks.classList.toggle('active');
+
+        // Lottie Animation
+        if (isMenuOpen) {
+            lottieIcon.setDirection(-1);
+        } else {
+            lottieIcon.setDirection(1);
+        }
+        lottieIcon.play();
+        isMenuOpen = !isMenuOpen;
+    });
 });

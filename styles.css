@@ -1,6 +1,12 @@
 
 /*Estilos para elementos iguales*/
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: system-ui, Roboto;
     margin: 0;
@@ -17,7 +23,6 @@ a {
 @media (pointer: coarse) {
     a {
         -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
     }
 }
 
@@ -76,8 +81,11 @@ p {
 
 /*Estilos Individuales*/
 .header-section {
+    display: flex;
     position: sticky;
     top: 0px;
+    left: auto;
+    right: auto;
     z-index: 50;
     width: 100%;
     background-color: rgba(6, 17, 40, 0.9);
@@ -86,16 +94,19 @@ p {
 
 .nav-menu-wrapper {
     display: flex;
+    position: static;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0px 30px;
+    padding: 10px 30px;
+    max-width: none;
 }
 
 .brand {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 101;
 }
 
 .web-logo {
@@ -162,6 +173,12 @@ p {
     width: 100%;
 }
 
+.nav-right-links-mobile {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
 .nav-right-links {
     display: flex;
     justify-content: center;
@@ -189,6 +206,12 @@ p {
 .nav-button:hover,
 .nav-button:active {
     opacity: 0.9;
+}
+
+@media (min-width: 1001px) {
+  .burguer-button {
+    display: none;
+  }
 }
 
 .principal-section {
@@ -591,18 +614,61 @@ p {
 
 
 /*Media Queries 1000px*/
-
 @media (max-width: 1000px) {
-    .nav-menu {
-        display: none;
+    .burguer-button {
+        background-color: transparent;
+        color: #fafafa;
+        z-index: 101;
+        width: 60px;
+        height: auto;
+        border: none;
+        padding: 0 0;
+        margin-right: 20px;
     }
 
+    .header-section {
+        border-bottom: 0px;
+    }
+    
+    .nav-menu,
     .nav-right-links {
         display: none;
     }
 
+    .nav-menu.active{
+        display: block;
+        position: fixed;
+        background: rgba(15, 23, 41, 0.4);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+        padding: 0px 12px;
+        padding-top: 100px;
+        inset: 0;
+    }
+    
+    .nav-link {
+        position: static;
+        display: block;
+        margin-left: 24px;
+    }
+
+    .nav-right-links-mobile {
+        display: flex;
+        top: 100%;
+        z-index: 100;
+    }
+
+    .burger-button {
+      display: block;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
     .nav-menu-wrapper {
-        padding: 0px 0px;
+        padding: 10px 0px;
         position: sticky;
     }
 
