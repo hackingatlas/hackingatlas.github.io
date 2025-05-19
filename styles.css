@@ -15,6 +15,7 @@ body {
 }
 
 a {
+    display: block;
     cursor: pointer;
     border-radius: 7px;
     text-decoration: none;
@@ -36,7 +37,7 @@ svg {
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 68px;
     display: block;
     font-weight: 700;
     white-space: nowrap;
@@ -75,7 +76,9 @@ p {
 }
 
 .footer {
-
+    padding-top: 48px;
+    padding-bottom: 24px;
+    background-color: rgba(6, 17, 40, 1)
 }
 
 
@@ -175,7 +178,7 @@ p {
 
 .nav-right-links-mobile {
     display: none;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -240,8 +243,9 @@ p {
 }
 
 .text-div {
-    width: auto;
-    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .principal-text {
@@ -280,11 +284,26 @@ p {
 }
 
 .database {
+    font-size: 75px;
     display: block;
     color: transparent;
-    background-image: linear-gradient(150deg, #00bbff, #00ff9d 46%);
+    background-image: linear-gradient(
+      125deg,
+      #00bbff 35%,
+      #00ff9d 50%,
+      #00bbff 65%
+    );
+    background-size: 300% 100%;
+    background-position: center;
     background-clip: text;
     -webkit-background-clip: text;
+    background-repeat: no-repeat;
+    animation: shine 3s linear infinite alternate;
+}
+
+@keyframes shine {
+    from { background-position: 10% 100%; }
+    to   { background-position: 100% 100%; }
 }
 
 .web-description {
@@ -612,6 +631,90 @@ p {
     background-attachment: fixed;
 }
 
+.footer-container {
+    padding: 0px 32px;
+}
+
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0px, 1fr));
+    gap: 32px;
+    margin-bottom: 20px;
+}
+
+.footer-info-div {
+    display: block;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-web-logo {
+    width: 40px;
+    height: auto;
+}
+
+.footer-text-logo {
+    font-size: 20px;
+    color: #fafafa;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.footer-text {
+    margin-top: 16px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 24px;    
+}
+
+.footer-logo-link {
+    width: 20px;
+    height: auto;
+    color: #97a3b4;
+    transition: color 150ms cubic-bezier(.4,0,.2,1);
+}
+
+.footer-logo-link:hover {
+    color: #fafafa;
+}
+
+.quick-links-title {
+    color: #fafafa;
+    margin: 0px;
+    font-weight: 600;
+}
+
+.footer-quick-links {
+    list-style: none;
+    margin-bottom: 16px;
+    padding: 0px;
+
+}
+
+.quick-link {
+    display: flex;
+    transition: color 150ms cubic-bezier(.4,0,.2,1);
+}
+
+.quick-link:hover {
+    color: #fafafa;
+}
+
+.footer-li-spaced {
+    margin-top: 0.5em;
+}
+
+.footer-rights {
+    padding-top: 24px;
+    text-align: center;
+    border-top: 1px solid #434856;
+}
 
 /*Media Queries 1000px*/
 @media (max-width: 1000px) {
@@ -626,36 +729,92 @@ p {
         margin-right: 20px;
     }
 
-    .header-section {
-        border-bottom: 0px;
-    }
-    
     .nav-menu,
     .nav-right-links {
-        display: none;
+        position: fixed;
+        right: -100%;
+        visibility: hidden;
+        opacity: 0;
+        transition: right 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity 0.4s ease;
     }
 
-    .nav-menu.active{
+    .nav-menu.active {
         display: block;
         position: fixed;
-        background: rgba(15, 23, 41, 0.4);
-        backdrop-filter: blur(10px);
+        background: rgba(6, 17, 40, 0.4);
+        backdrop-filter: blur(7px);
         z-index: 100;
-        padding: 0px 12px;
-        padding-top: 100px;
-        inset: 0;
+        padding: 30px;
+        padding-right: 100px;
+        top: 101px;
+        bottom: 4px;
+        right: -80px;
+        visibility: visible;
+        opacity: 1;
+        box-shadow: rgba(0, 0, 0, 0.422) 0px 10px 10px 10px;
+        transition: right 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
+
+    .nav-menu.closing {
+        animation: slideOut 0.6s forwards;
+        opacity: 1;
+        pointer-events: none;
+    }
+
+@keyframes slideOut {
+    0% {
+        right: -80px;
+    }
+    50% {
+        right: -60px;
+    }
+    100% {
+        right: -100%;
+    }
+}
     
     .nav-link {
         position: static;
         display: block;
-        margin-left: 24px;
+        font-size: 30px;
+        margin-left: 0;
+        padding: 8px 12px;
+        color: #fafafa;
+    }
+
+    #in {
+        background-color: #27324b;
+        margin-top: 30px;
+        color: #97a3b4;
     }
 
     .nav-right-links-mobile {
-        display: flex;
+        display: block;
+        margin-top: 50px;
         top: 100%;
         z-index: 100;
+    }
+
+    #nav-button-mobile {
+        align-self: center;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+
+    #nav-button-image {
+        width: 130px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .right-icons-mobile {
+        display: flex;
+        margin-left: 20px;
+        gap: 12px;
+    }
+
+    .nav-logo-link {
+        width: 50px;
     }
 
     .burger-button {
@@ -703,10 +862,6 @@ p {
         white-space: normal;
     }
 
-    .database {
-        background-image: linear-gradient(150deg, #0bf, #00ff9d);
-    }
-
     .web-description {
         max-width: 580px;
         font-size: 30px;
@@ -745,6 +900,7 @@ p {
 
 }
 
+
 @media (max-width: 600px ) {
     h1 {
         font-size: 13.5vw;
@@ -754,14 +910,14 @@ p {
     .principal-text {
         background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #f9f9f9 50.1%);
         font-family: 'Noto Sans';
-        font-size: 12vw;
+        font-size: 13vw;
         font-weight: 700;
         -webkit-text-stroke: 1.5px #fafafadb;
         -webkit-text-fill-color: transparent;
     }
 
     .database {
-        font-size: 12vw;
+        font-size: 17vw;
         font-family: 'Noto Sans';
         font-weight: 800;
     }
@@ -770,7 +926,7 @@ p {
         font-size: 6vw;
         text-align: left;
         padding-left: 20px;
-        margin-top: 60px;
+        margin-top: 40px;
     }
 
     .buttons-div {
@@ -780,7 +936,7 @@ p {
         max-width: 65vw;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 80px;
+        margin-top: 60px;
     }
 
     .conocimiento-button {

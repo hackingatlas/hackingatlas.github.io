@@ -120,6 +120,7 @@ function enableMobileHover() {
     observer.observe(target);
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
     displayWriteup();
     plausibleVisitors();
@@ -140,16 +141,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let isMenuOpen = false;
 
     menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        navRightLinks.classList.toggle('active');
+        if (isMenuOpen) {
+            // Añadir clase de cierre (sin quitar active aún)
+            navMenu.classList.add('closing');
+
+            // Después de animar, limpiar clases
+            setTimeout(() => {
+                navMenu.classList.remove('active', 'closing');
+            }, 600); // Duración igual a la animación CSS
+            navRightLinks.classList.remove('active');
+        } else {
+            // Apertura directa
+            navMenu.classList.add('active');
+            navRightLinks.classList.add('active');
+        }
 
         // Lottie Animation
         if (isMenuOpen) {
-            lottieIcon.setDirection(-1);
+            lottieIcon.playSegments([63, 97], true);
         } else {
-            lottieIcon.setDirection(1);
+            lottieIcon.playSegments([0, 63], true);
         }
-        lottieIcon.play();
+
         isMenuOpen = !isMenuOpen;
     });
 });
