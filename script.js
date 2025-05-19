@@ -42,7 +42,7 @@ function displayWriteup() {
                             <span class="user-definition text">Pentester</span>
                         </div>
                     </div>
-                    <a href="https://samucrow.github.io/writeups" class="machine-link">Read Writeup <i class="material-icons" id="writeup-arrow">arrow_forward</i></a>
+                    <a href="https://samucrow.github.io/writeups/${writeup.name.toLowerCase()}" class="machine-link">Read Writeup <i class="material-icons" id="writeup-arrow">arrow_forward</i></a>
                 </div>
             `;
 
