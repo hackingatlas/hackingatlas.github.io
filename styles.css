@@ -868,17 +868,17 @@ input::placeholder {
         pointer-events: none;
     }
 
-@keyframes slideOut {
-    0% {
-        right: -80px;
+    @keyframes slideOut {
+        0% {
+            right: -80px;
+        }
+        50% {
+            right: -60px;
+        }
+        100% {
+            right: -100%;
+        }
     }
-    50% {
-        right: -60px;
-    }
-    100% {
-        right: -100%;
-    }
-}
     
     .nav-link {
         position: static;
